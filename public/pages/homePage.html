@@ -8,6 +8,22 @@
     <script defer type="module" src="../../src/Js/index.js"></script>
 </head>
 <body>
+    <div class="hero flex w-full m-4">
+        
+        <div>
+            <img class="h-52 w-40 object-cover" src="../../src/images/blank-profile.jpg" alt="" id="profile-pic">
+            <label class="p-2 bg-gray-500" for="input-file">Update Image</label>
+            <input class="hidden" type="file" accept="image/*" id="input-file">
+        </div>
+        <div class="card flex flex-col">
+            
+            <h1 class="characterName mx-2 p-2"> <input type="text" placeholder="Character Name"></h1>
+            <h2 class="characterClass mx-2 p-2"><input type="text" placeholder="Class(es)"> </h2>
+            <h2 class="characterRace mx-2 p-2"> <input type="text" placeholder="Race"> </h2>
+            <h2 class="characterLevel mx-2 p-2"><input type="number" placeholder="0" min="0"> </h2>
+        </div>
+
+    </div>
     <div class="flex items-baseline">
     <table class="m-4">
         <thead>
@@ -22,21 +38,23 @@
         </thead>
         <tbody id="stat-table-body"></tbody>
     </table>
-
-    <table>
-        <thead>
-            <tr>
-                <th>Skill</th>
-                <th>Stat</th>
-                <th>Total</th>
-                <th>Mod</th>
-                <th>Ranks</th>
-                <th>Misc</th>
-                <th>Class</th>
-            </tr>
-        </thead>
-        <tbody id="skill-table-body"></tbody>
-    </table>
+    <div id="skills-table">
+        <table>
+            <thead>
+                <tr>
+                    <th>Skill</th>
+                    <th>Stat</th>
+                    <th>Total</th>
+                    <th>Mod</th>
+                    <th>Ranks</th>
+                    <th>Misc</th>
+                    <th>Class</th>
+                </tr>
+            </thead>
+            <tbody id="skill-table-body"></tbody>
+        </table>
+    </div>
+    
 </div>
 
     

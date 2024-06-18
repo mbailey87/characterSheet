@@ -94,6 +94,7 @@ function createAddSkillButton(tbody) {
 }
 
 function showAddSkillForm() {
+    const skillTable = document.getElementById('skills-table');
     const form = document.createElement('form');
     form.innerHTML = `
         <label>Skill Name: <input type="text" id="newSkillName" required></label>
@@ -105,7 +106,7 @@ function showAddSkillForm() {
         <button type="submit">Save Skill</button>
         <button type="button" id="cancelSkillButton">Cancel</button>
     `;
-    document.body.appendChild(form);
+    document.skillTable.appendChild(form);
 
     form.addEventListener('submit', (event) => {
         event.preventDefault();
