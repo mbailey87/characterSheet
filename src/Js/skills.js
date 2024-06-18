@@ -83,10 +83,12 @@ function createAddSkillButton(tbody) {
     buttonCell.colSpan = 7;
     buttonCell.classList.add('text-center', 'p-2');
     const button = document.createElement('button');
+    button.id = 'addSkillButton';
     button.classList.add('bg-blue-500', 'text-white', 'p-2', 'rounded', 'hover:bg-blue-700');
     button.textContent = 'Add Skill';
     button.addEventListener('click', () => {
         showAddSkillForm();
+        button.disabled = true;
     });
     buttonCell.appendChild(button);
     buttonRow.appendChild(buttonCell);
@@ -96,25 +98,37 @@ function createAddSkillButton(tbody) {
 function showAddSkillForm() {
     const skillTable = document.getElementById('skills-table');
     const form = document.createElement('form');
+    form.id='addSkillForm';
+    form.classList.add('text-center', 'p-2', 'm-4');
     form.innerHTML = `
-        <label>Skill Name: <input type="text" id="newSkillName" required></label>
-        <label>Stat: 
-            <select id="newSkillStat" required>
-                ${stats.map(stat => `<option value="${stat}">${stat}</option>`).join('')}
-            </select>
-        </label>
-        <button type="submit">Save Skill</button>
-        <button type="button" id="cancelSkillButton">Cancel</button>
+        <div class='flex flex-col items-center'>
+            <div class='m-4'>
+                <label>Skill Name: <input type="text" id="newSkillName" required></label>
+                <label>Stat: 
+                    <select id="newSkillStat" required>
+                        ${stats.map(stat => `<option value="${stat}">${stat}</option>`).join('')}
+                    </select>
+                </label>
+            </div>
+            <div class='m-8 bg-red-500 flex justify-around'>
+                <div><button class="border border-gray-300 flex justify-self-start" type="submit">Save</button></div>
+                <div><button class="flex justify-self-end" type="button" id="cancelSkillButton">Cancel</button></div>
+            </div>
+        </div>
     `;
-    document.skillTable.appendChild(form);
+   skillTable.appendChild(form);
 
     form.addEventListener('submit', (event) => {
         event.preventDefault();
         saveNewSkill();
         form.remove();
+        document.getElementById('addSkillButton').disabled = false;
     });
 
-    document.getElementById('cancelSkillButton').addEventListener('click', () => form.remove());
+    document.getElementById('cancelSkillButton').addEventListener('click', () => { 
+        form.remove()
+        document.getElementById('addSkillButton').disabled = false;
+    });
 }
 
 function saveNewSkill() {
