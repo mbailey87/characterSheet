@@ -3,41 +3,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Character Creator</title>
+    <title>Character Sheet</title>
     <link rel="stylesheet" href="../../dist/tailwind.css">
-    <script defer src="../../src/Js/index.js"></script>
+    <script defer type="module" src="../../src/Js/index.js"></script>
 </head>
 <body>
     <div class="flex items-baseline">
-    <table id="stat-table" class="m-2 border-collapse border border-gray-300">
+    <table class="m-4">
         <thead>
-            <tr class="bg-gray-200">
-                <th class="p-2 border border-gray-300">Stat</th>
-                <th class="p-2 border border-gray-300">Ability Score</th>
-                <th class="p-2 border border-gray-300">Racial</th>
-                <th class="p-2 border border-gray-300">Bonuses</th>
-                <th class="p-2 border border-gray-300">Total</th>
-                <th class="p-2 border border-gray-300">Modifier</th>
+            <tr>
+                <th>Stat</th>
+                <th>Ab Score</th>
+                <th>Race</th>
+                <th>Bon</th>
+                <th>Total</th>
+                <th>Mod</th>
             </tr>
         </thead>
         <tbody id="stat-table-body"></tbody>
     </table>
 
-    <table id="skill-table" class="m-2 border-collapse border border-gray-300">
+    <table>
         <thead>
-            <tr class="bg-gray-200">
-                <th class="p-2 border border-gray-300">Skill</th>
-                <th class="p-2 border border-gray-300">Stat</th>
-                <th class="p-2 border border-gray-300">Total</th>
-                <th class="p-2 border border-gray-300">Modifier</th>
-                <th class="p-2 border border-gray-300">Ranks</th>
-                <th class="p-2 border border-gray-300">Misc</th>
-                <th class="p-2 border border-gray-300">Class Skill</th>
+            <tr>
+                <th>Skill</th>
+                <th>Stat</th>
+                <th>Total</th>
+                <th>Mod</th>
+                <th>Ranks</th>
+                <th>Misc</th>
+                <th>Class</th>
             </tr>
         </thead>
         <tbody id="skill-table-body"></tbody>
-        
     </table>
-    </div>
+</div>
+
+    
 </body>
 </html>
